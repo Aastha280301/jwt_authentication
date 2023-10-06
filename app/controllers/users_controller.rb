@@ -1,5 +1,8 @@
+require 'csv'
+
 class UsersController < ApplicationController
-  before_action :authenticate_request, except: [:create]
+  skip_before_action :authenticate_request
+  # before_action :authenticate_request, except: [:create]
   before_action :set_user, only: [:show, :destroy]
   
   def index
@@ -19,6 +22,12 @@ class UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages },
       status: :unprocessable_entity
     end
+  end
+
+  def import_users
+    uploaded_file = params[:file]
+    UserWorker.perform_async(uploaded_file.path)
+    render json: { message: "CSV is successfully import" }
   end
 
   def update

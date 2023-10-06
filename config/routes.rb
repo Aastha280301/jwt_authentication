@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users
   post '/auth/login', to: 'authentication#login'
-  
+
+  post 'users/import_users', to: 'users#import_users', as: 'import_users'
+  # delete 'user_files/destroy_all', to: 'user_files#destroy_all', as: 'destroy_all_user_files'
+
 end
