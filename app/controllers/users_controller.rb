@@ -30,6 +30,20 @@ class UsersController < ApplicationController
     render json: { message: "CSV is successfully import" }
   end
 
+  def update_password
+    @user = User.find_by(email: params[:email])
+    
+    if @user.authenticate(params[:current_password])
+      if @user.update(password: params[:new_password])
+        render json: { message: "Password updated successfully" }
+      else
+        render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      end
+    else
+      render json: { error: "Current password is incorrect" }, status: :unprocessable_entity
+    end
+  end
+
   def update
     unless @user.update(user_params)
       render json: { errors: @user.errors.full_messages },
