@@ -13,6 +13,8 @@ gem "sqlite3", "~> 1.4"
 gem "puma", "~> 5.0"
 gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem 'pry'
+gem 'rspec-rails'
+gem 'simplecov'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

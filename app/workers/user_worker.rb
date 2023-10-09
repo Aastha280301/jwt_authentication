@@ -7,7 +7,7 @@ class UserWorker
 
   def perform(csv_path)
     @csv_path = csv_path
-    create_users  
+    create_users
   end
 
   def create_users
