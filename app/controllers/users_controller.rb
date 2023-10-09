@@ -1,7 +1,6 @@
 require 'csv'
 
 class UsersController < ApplicationController
-  # before_action :authenticate_request
   before_action :authenticate_request, except: [:create]
   before_action :set_user, only: [:show, :destroy]
   
