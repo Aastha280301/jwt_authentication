@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :products, dependent: :destroy
   validates :email, format: URI::MailTo::EMAIL_REGEXP
+  has_many :images, as: :imageable
  
 end
