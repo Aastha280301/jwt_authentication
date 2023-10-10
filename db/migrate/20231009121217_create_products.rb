@@ -4,7 +4,8 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.belongs_to :user
       t.string :products_name
       t.float :price
-
+      t.belongs_to :order
+      
       t.timestamps
     end
   end
