@@ -1,5 +1,11 @@
+
 require 'rails_helper'
 
 RSpec.describe Image, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Associations' do
+    it 'belongs to imageable polymorphically' do
+      expect(Image.reflect_on_association(:imageable).macro).to eq :belongs_to
+      expect(Image.reflect_on_association(:imageable).options[:polymorphic]).to be true
+    end
+  end
 end

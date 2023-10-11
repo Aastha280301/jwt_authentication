@@ -1,33 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/developer/Desktop/Rails Project/jwt_authentication/spec/controllers/users_controller_spec.rb": {
+      "/home/developer/Desktop/Rails Project/jwt_authentication/spec/controllers/orders_controller_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           null,
-          7,
+          4,
           null,
           1,
-          6,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
+          3,
           null,
           null,
           1,
@@ -36,7 +20,9 @@
           1,
           1,
           1,
-          null,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -44,28 +30,17 @@
           1,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
           1,
           1,
-          null,
           1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
           null,
           null,
           1,
           1,
           1,
-          2,
           1,
-          null,
+          1,
+          1,
           null,
           null,
           null
@@ -134,6 +109,13 @@
           null,
           null,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           null
@@ -314,13 +296,40 @@
           null
         ]
       },
+      "/home/developer/Desktop/Rails Project/jwt_authentication/spec/factories/images.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/Desktop/Rails Project/jwt_authentication/spec/factories/orders.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/Desktop/Rails Project/jwt_authentication/spec/factories/products.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/developer/Desktop/Rails Project/jwt_authentication/spec/factories/user.rb": {
         "lines": [
           1,
           1,
-          7,
-          7,
-          7,
+          4,
+          4,
+          4,
           null,
           null,
           null
@@ -330,85 +339,34 @@
         "lines": [
           1,
           null,
-          null,
-          null,
-          null,
           1,
           1,
           null,
           1,
           1,
+          1,
           null,
+          1,
           null,
           null
         ]
       },
-      "/home/developer/Desktop/Rails Project/jwt_authentication/app/controllers/users_controller.rb": {
+      "/home/developer/Desktop/Rails Project/jwt_authentication/app/controllers/orders_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          1,
-          1,
+          3,
+          3,
           null,
-          1,
-          1,
-          1,
+          3,
           null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
+          3,
           2,
           2,
-          1,
           null,
           1,
           null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          2,
           null,
           null,
           null
@@ -440,8 +398,8 @@
           1,
           null,
           1,
-          6,
-          6,
+          3,
+          3,
           null,
           null,
           1,
@@ -460,6 +418,8 @@
           1,
           null,
           1,
+          1,
+          1,
           null,
           null
         ]
@@ -470,8 +430,24 @@
           1,
           null
         ]
+      },
+      "/home/developer/Desktop/Rails Project/jwt_authentication/app/models/order.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/developer/Desktop/Rails Project/jwt_authentication/app/models/product.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1696851969
+    "timestamp": 1697009066
   }
 }
