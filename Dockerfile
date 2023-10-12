@@ -14,4 +14,4 @@ ADD . /docker/jwt_authentication
 
 # ARG DEFAULT_PORT 3001
 
-# CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
