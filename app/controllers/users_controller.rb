@@ -31,9 +31,10 @@ class UsersController < ApplicationController
 
   def update_password
     @user = User.find_by(email: params[:email])
-    
+
     if @user.authenticate(params[:current_password])
       if @user.update(password: params[:new_password])
+        UserMailer.with(user: @user).welcome_email.deliver_now
         render json: { message: "Password updated successfully" }
       else
         render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
