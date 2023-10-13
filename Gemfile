@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # ruby "3.0.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rolify'
 gem "rails", "~> 7.0.8"
 
 # Use sqlite3 as the database for Active Record
@@ -12,10 +13,10 @@ gem "sqlite3", "~> 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 gem 'byebug', '~> 11.1', '>= 11.1.3'
-gem 'pry'
 gem 'rspec-rails'
 gem 'simplecov'
 gem 'faker'
+gem 'pry'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
