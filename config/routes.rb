@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   post 'orders/search', to: 'orders#search', as: 'search'
 
   resources :products
+  
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
 end
