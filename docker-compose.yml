@@ -1,5 +1,18 @@
 version: '3.7'
 services:
+  rails:
+    image: your-rails-app-image
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: sqlite3:/docker/jwt_authentication/db.sqlite3
+
   db: 
     image: mysql:5.7
     restart: always
