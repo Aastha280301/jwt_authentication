@@ -1,12 +1,16 @@
 require 'csv'
 
 class UsersController < ApplicationController
-  before_action :authenticate_request, except: [:create]
-  before_action :set_user, only: [:show, :destroy]
+  before_action :authenticate_request, except: [:create, :new]
+  # before_action :set_user, only: [:show, :destroy]
   
   def index
     @users = User.all
     render json: @users, status: :ok
+  end
+  
+  def new
+    @user = User.new
   end
 
   def show 
@@ -16,7 +20,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render json: @user, status: :created
+      render 'create'
+      # render json: @user, status: :created
     else 
       render json: { errors: @user.errors.full_messages },
       status: :unprocessable_entity
@@ -58,7 +63,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password)
   end
 
   def set_user

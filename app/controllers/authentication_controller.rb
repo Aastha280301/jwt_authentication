@@ -1,6 +1,10 @@
 class AuthenticationController < ApplicationController
-  skip_before_action :authenticate_request
+  before_action :authenticate_request , except: [:login, :index]
   
+  def index
+    
+  end
+
   def login
     @user = User.find_by_email(params[:email])
     if @user&.authenticate(params[:password])

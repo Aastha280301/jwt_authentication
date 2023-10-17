@@ -1,7 +1,7 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include JsonWebToken 	 
 
-  before_action :authenticate_request 
+  before_action :authenticate_request ,except: [:index, :login]
 
   private 	
 
