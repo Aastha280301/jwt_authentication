@@ -1,12 +1,13 @@
 <h1>Please enter email and password</h1>
 
 <%= form_with model: @user, url: auth_login_path, method: :post do |form| %>
-  <div>
+
+  <div class="field" style="margin-bottom: 5px;">
     <%= form.label :email %><br>
     <%= form.text_field :email %>
   </div>
 
-  <div>
+  <div class="field" style="margin-bottom: 5px;">
     <%= form.label :password %><br>
     <%= form.password_field :password %>
   </div>
