@@ -1,4 +1,17 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_request ,except: [:create, :new]
+  def new
+    @order = Order.new
+  end
+
+  def create
+    @order = Order.new(order_params) 
+    if @order.save
+      redirect_to new_product_path
+    else 
+      render 'new'
+    end
+  end
 
   def search
     @search_product = params[:search_product]
@@ -12,6 +25,12 @@ class OrdersController < ApplicationController
     else
       render json: { errors: "Enter valid information"}
     end
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:order_detail)
   end
 
 end

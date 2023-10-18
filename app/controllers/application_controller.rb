@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
-  include JsonWebToken 	 
+  include JsonWebToken
 
   before_action :authenticate_request ,except: [:index, :login]
 
-  private 	
+  private
 
   def authenticate_request 	
-    header = request.headers["Authorization"] 	
+    header = request.headers["Authorization"]
     header = header.split(" ").last if header 
     decoded = jwt_decode(header)
     @current_user = User.find(decoded[:user_id]) 	
