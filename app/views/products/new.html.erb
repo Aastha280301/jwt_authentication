@@ -1,0 +1,28 @@
+<%= form_for @product do |f| %>
+  
+  <div class="field">
+    <%= f.label :products_name %>
+    <%= f.text_field :products_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :order_id %>
+    <%= f.collection_select(:order_id, Order.all, :id, :order_detail, include_blank: 'Select an Order') %>
+    <%= link_to 'Add New Order', new_order_path, class: 'btn btn-primary', remote: true %>
+ </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
