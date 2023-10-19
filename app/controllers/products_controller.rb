@@ -2,13 +2,11 @@ class ProductsController < ApplicationController
   before_action :authenticate_request, except: [:index, :create, :new]
 
   def index
-    @token = params[:token]
     @products = Product.all
   end
 
   def new
-    @product = Product.new  
-    @token = params[:token]
+    @product = Product.new
   end
   
   def create
