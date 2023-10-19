@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_request ,except: [:create, :new]
+  
   def new
     @order = Order.new
   end

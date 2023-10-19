@@ -14,14 +14,14 @@
 
   <div class="field" style="margin-bottom: 8px;">
     <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.collection_select(:user_id, User.all, :id, :username, include_blank: 'Select a User') %>
   </div>
 
   <div class="field" style="margin-bottom: 8px;">
     <%= f.label :order_id %>
     <%= f.collection_select(:order_id, Order.all, :id, :order_detail, include_blank: 'Select an Order') %>
     <%= link_to 'Add Order', new_order_path, class: 'btn btn-primary', remote: true %>
- </div>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

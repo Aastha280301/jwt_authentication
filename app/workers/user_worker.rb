@@ -12,11 +12,12 @@ class UserWorker
 
   def create_users
     CSV.foreach(csv_path, headers: true) do |user|
-    User.create!(
-      username: user['username'],
-      email: user['email'],
-      password: "aastha",
-    )
+      User.create!(
+        username: user['username'],
+        email: user['email'],
+        password: "aastha",
+      )
     end
   end
+  
 end
