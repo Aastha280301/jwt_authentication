@@ -1,0 +1,8 @@
+<%= hidden_field_tag :token, value: @token %>
+<h1>Product List</h1>
+<ul>
+  <% @products.each do |product| %>
+    <li><%= product.products_name %></li>
+  <% end %>
+</ul>
+<%= link_to 'Create Product', new_product_path, class: "btn btn-primary"%>

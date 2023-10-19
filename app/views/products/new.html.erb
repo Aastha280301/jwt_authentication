@@ -1,5 +1,7 @@
 <%= form_for @product do |f| %>
-  
+
+  <%= f.hidden_field :token, value: @token %>
+
   <div class="field" style="margin-bottom: 8px;">
     <%= f.label :products_name %>
     <%= f.text_field :products_name %>

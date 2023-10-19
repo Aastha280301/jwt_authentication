@@ -1,13 +1,14 @@
 class ProductsController < ApplicationController
   before_action :authenticate_request, except: [:index, :create, :new]
-  # before_action :token_generate, only: [:new, :create]
 
   def index
+    @token = params[:token]
     @products = Product.all
   end
 
   def new
     @product = Product.new  
+    @token = params[:token]
   end
   
   def create
@@ -19,7 +20,6 @@ class ProductsController < ApplicationController
       status: :unprocessable_entity
     end
   end
-
 
   private
 

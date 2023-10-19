@@ -2,7 +2,6 @@ require 'csv'
 
 class UsersController < ApplicationController
   before_action :authenticate_request, except: [:create, :new]
-  # before_action :set_user, only: [:show, :destroy]
   
   def index
     @users = User.all
