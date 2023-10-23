@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
  
   resources :authentication, only: [:index]
-  
+  resources :ratings, only: [:new, :create]
+
   post '/auth/login', to: 'authentication#login'
   post 'users/update_password', to: 'users#update_password', as: 'update_password'
   post 'users/import_users', to: 'users#import_users', as: 'import_users'

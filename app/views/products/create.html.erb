@@ -2,4 +2,4 @@
 <p>Product information:</p>
 <p>products_name: <%= @product.products_name %></p>
 <p>price: <%= @product.price %></p>
-<p>rating: <%= @product.rating %></p>
+<%= link_to 'Add Rating', new_rating_path, class: "btn btn-primary"%>
