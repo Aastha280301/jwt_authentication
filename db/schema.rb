@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_13_060909) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_23_060642) do
   create_table "images", force: :cascade do |t|
     t.string "name"
     t.string "imageable_type"
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_13_060909) do
     t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rating"
     t.index ["order_id"], name: "index_products_on_order_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -46,6 +47,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_13_060909) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
+  end
+
+  create_table "tokens", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tokens_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
