@@ -15,7 +15,7 @@ RSpec.describe ProductsController, type: :controller do
         expect do
           order = create(:order, order_detail: "delivered")
           request.headers['Authorization'] = "Bearer #{@token}"
-          product = create(:product,user_id: user.id, order_id: order.id, products_name: "ExampleProduct")
+          product = create(:product,user_id: user.id, order_id: order.id, products_name: "ExampleProduct", rating: 4)
         end.to change(Product, :count).by(1)
         expect(response).to have_http_status(:ok)
       end
