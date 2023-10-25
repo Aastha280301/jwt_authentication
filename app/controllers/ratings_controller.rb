@@ -1,6 +1,10 @@
 class RatingsController < ApplicationController
   before_action :authenticate_request, except: [:create, :new]
 
+  def index
+    @rating = @product.rating.all
+  end
+  
   def new 
     @rating = Rating.new
   end

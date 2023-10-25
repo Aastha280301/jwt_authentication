@@ -1,10 +1,32 @@
 <%= hidden_field_tag :token, value: @token %>
 
 <h1>Product List</h1>
-<ul>
-  <% @products.each do |product| %>
-    <li><%= product.products_name %></li>
-  <% end %>
-</ul>
+  <table class="table"; border= 2px;>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.products_name %></td>
+          <td><%= product.price %></td>
+          <td>
+            <%= link_to 'View Detail', product_path(product), class: "btn btn-primary" %>  
+            <% if @current_user_roles&.include?('admin') %>
+              <%= link_to 'Create Product', new_product_path, class: "btn btn-primary" %>
+            <% else %>
+              <%= link_to 'Add Rating', new_rating_path, class: "btn btn-primary" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Create Product', new_product_path, class: "btn btn-primary"%>
+  <div class="pagination">
+  <%= will_paginate @products %>
+</div>
