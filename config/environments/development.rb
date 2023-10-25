@@ -58,7 +58,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
-
+  config.hosts << "jwt-authentication-0l9t.onrender.com"
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 
