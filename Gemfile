@@ -8,7 +8,6 @@ gem 'rolify'
 gem "rails", "~> 7.0.8"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -47,6 +46,10 @@ gem "bootsnap", require: false
 
 gem 'letter_opener_web', '~> 2.0'
 
+group :production do
+  # gem 'pg'
+end
+
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -62,3 +65,4 @@ group :development do
   # gem 'letter_opener_web'
 end
 
+gem "pg", "~> 1.5"
