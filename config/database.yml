@@ -9,8 +9,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   encoding: unicode
   timeout: 5000 
-  username: developer
-  password: password
+  username: jwt_auth_deyb_user
+  password: 1NyrvrfzMfUE7m696kUsEG68TCs21Vgs
 
 development:
   <<: *default
