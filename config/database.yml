@@ -11,6 +11,8 @@ default: &default
   timeout: 5000 
   username: jwt_auth_deyb_user
   password: 1NyrvrfzMfUE7m696kUsEG68TCs21Vgs
+  host: /var/run/postgresql 
+  port: 5432
 
 development:
   <<: *default
