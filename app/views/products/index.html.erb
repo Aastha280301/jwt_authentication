@@ -10,10 +10,10 @@
       </tr>
     </thead>
     <tbody>
-      <% @products.each do |product| %>
+      <% @products.each do |p| %>
         <tr>
-          <td><%= product.products_name %></td>
-          <td><%= product.price %></td>
+          <td><%= p.products_name %></td>
+          <td><%= p.price %></td>
           <td>
             <%= link_to 'View Detail', product_path(product), class: "btn btn-primary" %>  
             <% if @current_user_roles&.include?('admin') %>
@@ -26,7 +26,3 @@
       <% end %>
     </tbody>
   </table>
-
-  <div class="pagination">
-  <%= will_paginate @products %>
-</div>
