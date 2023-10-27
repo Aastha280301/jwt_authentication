@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :check_role 
 
   def index
-    @products = Product.paginate(page: params[:page], per_page: 10)
+    # @products = Product.paginate(page: params[:page], per_page: 10)
     @products = Product.all
   end
 
