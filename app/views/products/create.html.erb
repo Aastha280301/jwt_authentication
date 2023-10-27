@@ -2,11 +2,9 @@
 
 <h1>Product List</h1>
 <ul>
-  <% if @products.present? %>
-    <% @products.each do |product| %>
-      <li><%= product.product_name %></li>
-      <p>Price: <%= product.price %></p>
-    <% end %>
+  <% if @product.present? %>
+      <li><%= @product.products_name %></li>
+      <p>Price: <%= @product.price %></p>
   <% else %>
     <p>No products found.</p>
   <% end %>
