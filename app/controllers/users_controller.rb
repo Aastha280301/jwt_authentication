@@ -1,7 +1,7 @@
 require 'csv'
 
 class UsersController < ApplicationController
-  before_action :authenticate_request, except: [:create, :new]
+  before_action :authenticate_request, except: [:create, :new, :new_import_file, :import_users]
   
   def index
     @users = User.all
@@ -24,6 +24,9 @@ class UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages },
       status: :unprocessable_entity
     end
+  end
+
+  def new_import_file
   end
 
   def import_users

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'products/check_role', to: 'products#check_role', as: 'check_role'
   post '/auth/login', to: 'authentication#login'
+  get 'users/new_import_file', to: 'users#new_import_file', as: 'new_import_file'
   post 'users/update_password', to: 'users#update_password', as: 'update_password'
   post 'users/import_users', to: 'users#import_users', as: 'import_users'
   post 'orders/search', to: 'orders#search', as: 'search'

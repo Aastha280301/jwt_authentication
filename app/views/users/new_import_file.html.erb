@@ -1,0 +1,7 @@
+<%= form_with(url: '/users/import_users', method: 'post', local: false, multipart: true) do |form| %>
+  <div class="form-group">
+    <%= form.label 'file', 'Select a CSV file:' %>
+    <%= form.file_field 'file' %>
+  </div>
+  <%= form.submit 'Import File', class: 'btn btn-primary' %>
+<% end %>
