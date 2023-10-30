@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_request, except: [:index, :create, :new, :show]
+  before_action :authenticate_request, except: [:index, :create, :new, :show, :new_import_file, :import_users]
   before_action :check_role 
 
   def index
-    # @products = Product.paginate(page: params[:page], per_page: 10)
-    @products = Product.all
+    @products = Product.paginate(page: params[:page], per_page: 10)
+    # @products = Product.all
   end
 
   def new
@@ -24,6 +24,15 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end 
+  
+  def new_import_file
+  end
+
+  def import_users
+    uploaded_file = params[:file]
+    ProductWorker.perform_async(uploaded_file.path)
+    render json: { message: "CSV is successfully import" }
+  end
 
   private
 

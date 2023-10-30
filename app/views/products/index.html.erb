@@ -1,6 +1,6 @@
 <%= hidden_field_tag :token, value: @token %>
 
-<h3>Product List   <%= link_to '     Import File', new_import_file_path, class: "btn btn-primary" %></h3>
+<h3>Product List   <%= link_to '     Import File', products_new_import_file_path , class: "btn btn-primary" %></h3>
   <table class="table"; border= 2px;>
     <thead>
       <tr>
@@ -26,3 +26,7 @@
       <% end %>
     </tbody>
   </table>
+
+<div class="pagination">
+  <%= will_paginate @products %>
+</div>

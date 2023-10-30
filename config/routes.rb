@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   post 'users/update_password', to: 'users#update_password', as: 'update_password'
   post 'users/import_users', to: 'users#import_users', as: 'import_users'
   post 'orders/search', to: 'orders#search', as: 'search'
+  post 'products/import_users', to: 'products#import_users'
+  get 'products/new_import_file', to: 'products#new_import_file'
 
   resources :products, only: [:new, :index, :show, :create]
   resources :orders, only: [:new, :create]
