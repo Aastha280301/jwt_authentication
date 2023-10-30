@@ -15,7 +15,7 @@
           <td><%= p.products_name %></td>
           <td><%= p.price %></td>
           <td>
-            <%= link_to 'View Detail', product_path(product), class: "btn btn-primary" %>  
+            <%= link_to 'View Detail', product_path(p.id), class: "btn btn-primary" %>  
             <% if @current_user_roles&.include?('admin') %>
               <%= link_to 'Create Product', new_product_path, class: "btn btn-primary" %>
             <% else %>
