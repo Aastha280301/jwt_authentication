@@ -18,6 +18,14 @@ gem 'faker'
 gem 'pry'
 gem 'will_paginate'
 
+group :assets do
+  gem 'sassc-rails'
+  gem 'bootstrap-sass', '~> 3.2.0'
+  gem 'autoprefixer-rails'
+end
+
+
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
