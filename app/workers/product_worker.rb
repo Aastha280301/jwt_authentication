@@ -15,8 +15,8 @@ class ProductWorker
       Product.create!(
         products_name: product['products_name'],
         price: product['price'],
-        user_id: 1,
-        order_id: 1
+        user_id: 27,
+        order_id: 17
       )
     end
   end

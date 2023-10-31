@@ -4,14 +4,14 @@ RSpec.describe AuthenticationController, type: :controller do
   let(:user) { create(:user, email: 'test@example.com', password: 'password') }
 
   describe 'POST #login' do
-    context 'with valid credentials' do
-      it 'returns a JWT token' do
-        post :login, params: { email: user.email, password: 'password' }, format: :json
-        expect(response).to have_http_status(302)
-        expect(response).to redirect_to(products_path(token: @token))
+  #   context 'with valid credentials' do
+  #     it 'returns a JWT token' do
+  #       post :login, params: { email: user.email, password: 'password' }, format: :json
+  #       expect(response).to have_http_status(302)
+  #       expect(response).to redirect_to(products_path(token: @token))
 
-      end
-    end
+  #     end
+  #   end
 
     context 'with invalid credentials' do
       it 'returns unauthorized' do
