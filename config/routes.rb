@@ -18,13 +18,11 @@ Rails.application.routes.draw do
   post 'products/import_users', to: 'products#import_users'
   get 'products/new_import_file', to: 'products#new_import_file'
 
-  resources :products do
+  resources :products, only: [:new, :index, :show, :create] do
     collection do
       get 'search'
     end
   end
-
-  resources :products, only: [:new, :index, :show, :create]
   resources :orders, only: [:new, :create]
 
   if Rails.env.development?

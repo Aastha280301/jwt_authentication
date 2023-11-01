@@ -1,12 +1,24 @@
 <%= hidden_field_tag :token, value: @token %>
+<h3>Successfully Added the product</h3>
+  <table class = "table"; border= 2px;>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @product.present? %>
+        <tr>
+          <td><%= @product.products_name %></td>
+          <td><%= @product.price %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <td colspan="2">No products found.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<h1>Product List</h1>
-<ul>
-  <% if @product.present? %>
-    <li><%= @product.products_name %></li>
-    <p>Price: <%= @product.price %></p>
-  <% else %>
-    <p>No products found.</p>
-  <% end %>
   <%= link_to 'Create product', new_product_path, class: "btn btn-primary" %>
-</ul>
