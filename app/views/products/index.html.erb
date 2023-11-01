@@ -1,6 +1,12 @@
 <%= hidden_field_tag :token, value: @token %>
 
-<h3>Product List   <%= link_to '     Import File', products_new_import_file_path , class: "btn btn-primary" %></h3>
+<h3>Product List<%= link_to '     Import File', products_new_import_file_path , class: "btn btn-primary" %> 
+  <h6><%= form_with model: Product.new, url: search_products_path, method: :get do |f| %>
+    <%= f.label :product_id, 'Select a Product:' %>
+    <%= f.collection_select(:product_id, Product.all, :products_name, :products_name, include_blank: 'Select a Product') %>
+    <%= f.submit 'Search' %>
+  <% end %></h6>
+</h3>
   <table class="table"; border= 2px;>
     <thead>
       <tr>

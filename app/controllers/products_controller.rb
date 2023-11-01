@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_request, except: [:index, :create, :new, :show, :new_import_file, :import_users]
+  before_action :authenticate_request, except: [:index, :create, :new, :show, :new_import_file, :import_users, :search]
   before_action :check_role 
 
   def index
@@ -33,6 +33,14 @@ class ProductsController < ApplicationController
     ProductWorker.perform_async(uploaded_file.path)
     render json: { message: "CSV is successfully import" }
   end
+
+  def search
+    product_name = params[:product][:product_id]
+    @results = Product.where("products_name LIKE ?", "%#{product_name}%")
+  
+    render 'search'
+  end
+  
 
   private
 
